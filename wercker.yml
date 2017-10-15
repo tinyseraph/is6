@@ -1,0 +1,23 @@
+i# The container definition we want to use for developing our app
+box:
+  id: golang
+  ports:
+    - "5000"
+
+# Defining the dev pipeline
+#dev:
+#  steps:
+#    - internal/watch:
+#        code: |
+#          go build ./...
+#          ./source
+#        reload: true
+
+build:
+  steps:
+    - wercker/golint
+    - script:
+        name: go build
+        code: |
+          go build -o isuda isuda.go type.go util.go
+          go build -o isutar isutar.go type.go util.go
