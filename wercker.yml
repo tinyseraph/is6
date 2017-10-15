@@ -19,5 +19,6 @@ build:
     - script:
         name: go build
         code: |
-          go build -o isuda isuda.go type.go util.go
-          go build -o isutar isutar.go type.go util.go
+          make
+#         go build -o isuda isuda.go type.go util.go
+#         go build -o isutar isutar.go type.go util.go
